@@ -1,7 +1,12 @@
+/*
+Este es un archivo que permite calcular el factorial de un numero
+y cumple con la tarea de simular un cajero automatico segun los 
+deseos del usuario
+*/
 #include <iostream>
 using namespace std;
 
-int factorial(int num) {// Función para calcular el factorial de un número
+int factorial(int num) {/* Función para calcular el factorial de un número */
     int result = 1;
     for (int i = 1; i <= num; i++) {
         result *= i;
@@ -9,12 +14,12 @@ int factorial(int num) {// Función para calcular el factorial de un número
     return result;
 }
 
-int consultarSaldo(int saldo) {// Funcion para el cajero automático
+int consultarSaldo(int saldo) {/* Funcion para el cajero automático */
     cout << "Saldo actual: " << saldo << endl;
     return saldo;
 }
 
-int retirarEfectivo(int& saldo) {// Funcion para retirar el efectivo
+int retirarEfectivo(int& saldo) {/* Funcion para retirar el efectivo */
     int retiro;
     cout << "Ingrese la cantidad a retirar: ";
     cin >> retiro;
@@ -27,8 +32,8 @@ int retirarEfectivo(int& saldo) {// Funcion para retirar el efectivo
     return saldo;
 }
 
-int main() {// Función principal con el menú de opciones
-    int saldo = 20000; // Saldo inicial
+int main() {/* Función principal con el menú de opciones */
+    int saldo = 20000; /* Saldo inicial */
     int opcion;
 
     do {
@@ -39,7 +44,7 @@ int main() {// Función principal con el menú de opciones
         cout << "Opción: ";
         cin >> opcion;
 
-        switch (opcion) {// Permite al usuario elegir una opcion del menu en pantalla
+        switch (opcion) {/* Permite al usuario elegir una opcion del menu en pantalla */
             case 1: {
                 int num;
                 cout << "Ingrese un número para calcular el factorial: ";
@@ -57,7 +62,7 @@ int main() {// Función principal con el menú de opciones
                     cout << "Opción: ";
                     cin >> opcionCajero;
 
-                    switch (opcionCajero) {// Permite al usuario elegir una opcion del menu del cajero
+                    switch (opcionCajero) {/* Permite al usuario elegir una opcion del menu del cajero */
                         case 1:
                             consultarSaldo(saldo);
                             break;
@@ -68,7 +73,7 @@ int main() {// Función principal con el menú de opciones
                             cout << "Volviendo al Menú Principal..." << endl;
                             break;
                         default:
-                            cout << "Opción inválida." << endl;//El usuario ingreso una opcion que no incluia el menu anterior
+                            cout << "Opción inválida." << endl;/* El usuario ingreso una opcion que no incluia el menu anterior */
                     }
                 } while (opcionCajero != 3);
                 break;
@@ -83,4 +88,3 @@ int main() {// Función principal con el menú de opciones
 
     return 0;
 }
-
